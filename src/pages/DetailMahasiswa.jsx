@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { dosenService } from '../api';
-// eslint-disable-next-line no-unused-vars
-import { CheckCircle, XCircle, ArrowLeft, History, BookOpen, Calendar, Trash2, Send} from 'lucide-react';
+import { ArrowLeft, History, BookOpen, Trash2, Send } from 'lucide-react';
 
 const DetailMahasiswa = () => {
   const { nim } = useParams();
@@ -87,7 +86,7 @@ const DetailMahasiswa = () => {
       </button>
 
       <div className="row g-4">
-        {/* Kolom Kiri: Info Mahasiswa & Log */}
+        {/* Info Mahasiswa & Log */}
         <div className="col-lg-4">
           <div className="card border-0 shadow-sm mb-4">
             <div className="card-body text-center">
@@ -133,7 +132,7 @@ const DetailMahasiswa = () => {
           </div>
         </div>
 
-        {/* Kolom Kanan: Daftar Surah */}
+        {/* Daftar Surah */}
         <div className="col-lg-8">
           <div className="card border-0 shadow-sm">
             <div className="card-header bg-white fw-bold py-3 d-flex justify-content-between align-items-center">

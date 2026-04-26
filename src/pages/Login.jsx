@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { authService } from '../api';
 
@@ -13,6 +13,7 @@ const Login = () => {
       const res = await authService.login(user, pass);
       localStorage.setItem('token', res.data.access_token);
       navigate('/dashboard');
+    // eslint-disable-next-line no-unused-vars
     } catch (err) {
       alert("Login Gagal! Periksa NIM/NIP dan Password.");
     }

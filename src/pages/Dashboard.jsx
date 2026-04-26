@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { dosenService } from '../api';
 import { Link } from 'react-router-dom';
-import { User, Users, Mail, ArrowRight, GraduationCap } from 'lucide-react';
+import { User, Users, Mail, ArrowRight } from 'lucide-react';
 
 const Dashboard = () => {
   const [data, setData] = useState(null);

@@ -1,40 +1,111 @@
+/* Import Font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
 :root {
-  --primary-color: #0d6efd;
-  --bg-light: #f4f7f6;
+  --uin-green: #006837; /* Hijau Khas UIN */
+  --uin-gold: #f8c301;  /* Kuning Emas UIN */
+  --soft-green: #eef5f0;
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--bg-light);
+  background-color: var(--soft-green);
+  background-image: url("https://www.transparenttextures.com/patterns/arabesque.png"); /* Pola ukiran halus */
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* Header & Card */
 .card {
   border: none;
   border-radius: 15px;
-  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 104, 55, 0.08);
+}
+
+.card-header {
+  background-color: white;
+  border-bottom: 2px solid var(--soft-green);
+  color: var(--uin-green);
+  font-weight: bold;
+}
+
+/* Tombol Validasi Khas UIN */
+.btn-primary {
+  background-color: var(--uin-green) !important;
+  border-color: var(--uin-green) !important;
+}
+
+.btn-primary:hover {
+  background-color: #004d29 !important;
+  transform: translateY(-2px);
+  transition: 0.3s;
+}
+
+/* Badge & Progress Bar */
+.bg-soft-primary {
+  background-color: rgba(0, 104, 55, 0.1) !important;
+  color: var(--uin-green) !important;
+}
+
+/* Overlay Background Al-Qur'an di pojok halaman */
+.bg-quran-ornament {
+  position: fixed;
+  bottom: -50px;
+  right: -50px;
+  opacity: 0.1; /* Transparan agar tidak mengganggu tulisan */
+  z-index: -1;
+  width: 400px;
+}
+
+/* Card Hover Animation */
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px !important;
 }
 
 .hover-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08) !important;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
 }
 
-.btn-primary {
+/* Custom Progress Bar */
+.progress {
+  background-color: #e9ecef;
   border-radius: 10px;
-  padding: 10px 24px;
-  font-weight: 600;
+  overflow: hidden;
 }
 
+.progress-bar {
+  background: linear-gradient(90deg, #f8c301, #ffe481);
+  transition: width 1s ease-in-out;
+}
+
+/* Avatar Circle */
+.avatar-lg {
+  width: 80px;
+  height: 80px;
+  font-size: 24px;
+}
+
+/* List Item Animation */
 .list-group-item {
-  border: none;
-  margin-bottom: 8px;
-  border-radius: 10px !important;
-  transition: 0.2s;
+  border-left: 4px solid transparent;
+  transition: all 0.2s;
 }
 
 .list-group-item:hover {
-  background-color: #f8f9ff;
-  border-left: 5px solid var(--primary-color);
+  background-color: #fff;
+  border-left: 4px solid var(--uin-green);
+  padding-left: 20px !important;
+}
+
+/* Login Page Styling */
+.login-container {
+  max-width: 400px;
+  margin-top: 100px;
+}
+
+.login-card {
+  border: none;
+  border-radius: 15px;
+  padding: 30px;
 }

@@ -26,18 +26,24 @@ export const authService = {
 };
 
 export const dosenService = {
-  // Endpoint 1: ambil daftar mahasiswa bimbingan
+  // Endpoint 1: Ambil daftar mahasiswa bimbingan
   getPaSaya: () => api.get('/dosen/pa-saya'),
 
-  // Endpoint 2: ambil detail mahasiswa berdasarkan NIM
+  // Endpoint 2: Lihat riwayat lengkap satu mahasiswa
   getDetailMahasiswa: (nim) => api.get(`/mahasiswa/setoran/${nim}`),
-  
-  // Endpoint 3: Menambah Setoran Baru untuk Mahasiswa
-  simpanSetoran: (nim, dataSetoran) => api.post(`/mahasiswa/setoran/${nim}`, {
-    data_setoran: dataSetoran,
-    tgl_setoran: new Date().toISOString().split('T')[0] // format YYYY-MM-DD
-  }),
 
-  // Endpoint 4: membatalkan/menghapus setoran
-  deleteSetoran: (nim, dataBatal) => api.delete(`/mahasiswa/setoran/${nim}`, { data: { data_setoran: dataBatal } }),
+  // Endpoint 3: Menambah/Validasi Setoran Baru
+  simpanSetoran: (nim, dataSetoran) => 
+    api.post(`/mahasiswa/setoran/${nim}`, {
+      data_setoran: dataSetoran, // Berisi array surah
+      tgl_setoran: new Date().toISOString().split('T')[0] // Format YYYY-MM-DD
+    }),
+
+  // Endpoint 4: Membatalkan/Hapus Validasi Setoran 
+  deleteSetoran: (nim, dataBatal) => 
+    api.delete(`/mahasiswa/setoran/${nim}`, {
+      data: {
+        data_setoran: dataBatal // Berisi id, id_komponen, dan nama surah
+      }
+    }),
 };
