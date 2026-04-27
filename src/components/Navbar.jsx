@@ -18,7 +18,7 @@ const Navbar = ({ onSearch }) => {
         {/* Logo */}
         <Link className="navbar-brand d-flex align-items-center fw-bold text-white" to="/dashboard">
           <GraduationCap className="me-2 text-warning" size={24} />
-          <span style={{ letterSpacing: '1px' }}>HafalanTI</span>
+          <span style={{ letterSpacing: '1px' }}>HafalanTIF</span>
         </Link>
 
         {/* Kolom Search yang lebih kontras */}
