@@ -143,7 +143,7 @@ const DetailMahasiswa = () => {
               {detail.setoran.detail.map((surah) => (
                 <div className="list-group-item d-flex justify-content-between align-items-center px-4 py-3 hover-card-item" key={surah.id}>
                   <div>
-                    <h6 className="fw-bold mb-0">{surah.nama} - {detail.info.nama}</h6>
+                    <h6 className="fw-bold mb-0">{surah.nama} • {detail.info.nama}</h6>
                     <small className="text-muted">{surah.nama_arab} • {surah.label}</small>
                   </div>
                   
